@@ -1,88 +1,115 @@
 /**
  * Mock memory corpus for RAG Playground.
- * Each entry simulates a stored memory with metadata.
+ * Generic RAG/ML examples - no personal data.
  */
 export const mockMemories = [
   {
     id: '1',
-    text: 'Ricky 喜欢古典音乐，特别是巴赫',
-    category: 'preference',
-    importance: 0.8,
+    text: 'Vector search uses embeddings to find semantically similar documents based on meaning, not just keywords',
+    category: 'fact',
+    importance: 0.85,
     createdAt: '2026-02-25',
     scope: 'global',
-    keywords: ['古典音乐', '巴赫', '音乐', '喜欢'],
+    keywords: ['vector', 'embeddings', 'semantic', 'similarity', 'search'],
   },
   {
     id: '2',
-    text: 'Ricky 的日常工作是 Data Engineer Lead，在一家房地产广告公司',
+    text: 'BM25 is a probabilistic ranking algorithm that scores documents based on term frequency and inverse document frequency',
     category: 'fact',
-    importance: 0.9,
+    importance: 0.85,
     createdAt: '2026-02-24',
     scope: 'global',
-    keywords: ['Data Engineer', 'Lead', '房地产', '广告', '工作'],
+    keywords: ['BM25', 'ranking', 'TF-IDF', 'term frequency', 'algorithm'],
   },
   {
     id: '3',
-    text: 'Hybrid Search 结合 Vector + BM25，比单一方法效果更好',
+    text: 'Hybrid Search combines Vector and BM25 methods for better recall - semantic understanding plus exact keyword matching',
     category: 'fact',
-    importance: 0.85,
+    importance: 0.9,
     createdAt: '2026-02-26',
     scope: 'global',
-    keywords: ['Hybrid Search', 'Vector', 'BM25', '搜索', '混合'],
+    keywords: ['Hybrid Search', 'Vector', 'BM25', 'recall', 'combined'],
   },
   {
     id: '4',
-    text: 'Cross-Encoder 用于精排，Bi-Encoder 用于初筛，两者结合效果最佳',
+    text: 'Cross-Encoder models score query-document pairs together for high accuracy reranking, but are slower than Bi-Encoders',
     category: 'fact',
     importance: 0.85,
     createdAt: '2026-02-26',
     scope: 'global',
-    keywords: ['Cross-Encoder', 'Bi-Encoder', 'Rerank', '精排', '初筛'],
+    keywords: ['Cross-Encoder', 'Bi-Encoder', 'reranking', 'accuracy', 'scoring'],
   },
   {
     id: '5',
-    text: 'LanceDB 是嵌入式向量数据库，原生支持 BM25，本地 Agent 首选',
+    text: 'LanceDB is an embedded vector database with native full-text search support, ideal for local applications',
     category: 'fact',
     importance: 0.8,
     createdAt: '2026-02-25',
     scope: 'global',
-    keywords: ['LanceDB', '向量数据库', 'BM25', '嵌入式', 'Agent'],
+    keywords: ['LanceDB', 'vector database', 'embedded', 'full-text', 'local'],
   },
   {
     id: '6',
-    text: 'Pitfall：纯 Vector Search 会漏关键词匹配，BM25 补足词汇命中',
+    text: 'Reciprocal Rank Fusion (RRF) merges multiple ranked lists by summing reciprocal ranks with a constant k',
     category: 'fact',
-    importance: 0.85,
+    importance: 0.8,
     createdAt: '2026-02-25',
     scope: 'global',
-    keywords: ['Vector Search', 'BM25', '关键词', '漏', 'Pitfall'],
+    keywords: ['RRF', 'Reciprocal Rank Fusion', 'merging', 'ranked lists', 'fusion'],
   },
   {
     id: '7',
-    text: 'Reciprocal Rank Fusion (RRF) 是融合 Vector 和 BM25 排名的标准算法',
+    text: 'Embedding models like text-embedding-3-small convert text into dense vectors that capture semantic meaning',
     category: 'fact',
     importance: 0.75,
     createdAt: '2026-02-23',
     scope: 'global',
-    keywords: ['RRF', 'Reciprocal Rank Fusion', '融合', '排名', 'Vector', 'BM25'],
+    keywords: ['embedding', 'text-embedding-3-small', 'dense vectors', 'semantic', 'OpenAI'],
   },
   {
     id: '8',
-    text: '本地 Agent 向量数据库选型：LanceDB 优先，云端大规模才考虑 Pinecone',
+    text: 'Chunking strategies affect RAG quality - smaller chunks improve precision but may lose context',
     category: 'decision',
-    importance: 0.95,
+    importance: 0.85,
     createdAt: '2026-02-22',
     scope: 'global',
-    keywords: ['LanceDB', 'Pinecone', '向量数据库', '选型', '云端'],
+    keywords: ['chunking', 'RAG', 'precision', 'context', 'strategy'],
   },
   {
     id: '9',
-    text: 'OpenClaw 系统中 EC2 CLI 操作必须由 Linus 负责，Pixel 只做前端',
-    category: 'decision',
-    importance: 0.9,
+    text: 'Cosine similarity measures the angle between vectors, commonly used for comparing embeddings in range [-1, 1]',
+    category: 'fact',
+    importance: 0.8,
     createdAt: '2026-02-24',
     scope: 'global',
-    keywords: ['EC2', 'CLI', 'Linus', 'Pixel', '前端', 'OpenClaw'],
+    keywords: ['cosine similarity', 'vectors', 'embeddings', 'distance', 'comparison'],
+  },
+  {
+    id: '10',
+    text: 'Prefer hybrid retrieval mode for production RAG systems to avoid missing keyword-specific queries',
+    category: 'decision',
+    importance: 0.9,
+    createdAt: '2026-02-26',
+    scope: 'global',
+    keywords: ['hybrid', 'retrieval', 'production', 'RAG', 'recommendation'],
+  },
+  {
+    id: '11',
+    text: 'HNSW (Hierarchical Navigable Small World) is a graph-based algorithm for fast approximate nearest neighbor search',
+    category: 'fact',
+    importance: 0.75,
+    createdAt: '2026-02-21',
+    scope: 'global',
+    keywords: ['HNSW', 'ANN', 'nearest neighbor', 'graph', 'algorithm'],
+  },
+  {
+    id: '12',
+    text: 'Reranking improves retrieval quality by rescoring initial results with a more powerful model',
+    category: 'fact',
+    importance: 0.85,
+    createdAt: '2026-02-25',
+    scope: 'global',
+    keywords: ['reranking', 'retrieval', 'rescoring', 'model', 'quality'],
   },
 ];
 
@@ -91,15 +118,12 @@ export const mockMemories = [
  * Uses a seeded approach so results are deterministic per query.
  */
 function simulateSimilarity(query, memory, seed = 1) {
-  // Deterministic pseudo-random: combine query hash + memory id
   const queryHash = query.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
   const memId = parseInt(memory.id);
   const combined = (queryHash * 37 + memId * 13 + seed * 7) % 1000;
 
-  // Base score from "semantic relevance" heuristic
   let base = 0.3 + (combined % 600) / 1000;
 
-  // Boost if memory keywords overlap with query tokens
   const queryTokens = query.toLowerCase().split(/[\s，,。？?！!、；;]+/);
   const overlap = memory.keywords.filter((kw) =>
     queryTokens.some((qt) => qt.length > 1 && (kw.toLowerCase().includes(qt) || qt.includes(kw.toLowerCase())))
@@ -112,7 +136,6 @@ function simulateSimilarity(query, memory, seed = 1) {
 
 /**
  * Simulate BM25 keyword score.
- * Returns higher scores for exact/partial keyword matches.
  */
 function simulateBM25(query, memory) {
   const queryTerms = query.toLowerCase().split(/[\s，,。？?！!、；;]+/).filter((t) => t.length > 1);
@@ -135,7 +158,6 @@ function simulateBM25(query, memory) {
     }
   }
 
-  // IDF-like boost: rare terms in corpus get more weight
   if (matches > 0) {
     score += 0.1 * Math.log(1 + matches);
   }
@@ -145,7 +167,6 @@ function simulateBM25(query, memory) {
 
 /**
  * Reciprocal Rank Fusion score.
- * RRF(d) = Σ 1 / (k + rank_i(d))
  */
 function rrfFuse(vectorResults, bm25Results, k = 60) {
   const ids = [...new Set([...vectorResults, ...bm25Results].map((r) => r.id))];
@@ -158,7 +179,6 @@ function rrfFuse(vectorResults, bm25Results, k = 60) {
     const bScore = bRank > 0 ? 1 / (k + bRank) : 0;
     const rrf = vScore + bScore;
 
-    // Normalize RRF to 0-1 range (max possible ≈ 2/(k+1))
     const maxRrf = 2 / (k + 1);
     const normalized = parseFloat(Math.min(0.99, rrf / maxRrf).toFixed(3));
 
@@ -183,12 +203,10 @@ function rrfFuse(vectorResults, bm25Results, k = 60) {
 
 /**
  * Main mock search function.
- * Returns { vector, bm25, hybrid } sorted result sets.
  */
 export function mockSearch(query) {
   if (!query.trim()) return { vector: [], bm25: [], hybrid: [] };
 
-  // Compute vector scores
   const vectorScored = mockMemories.map((mem) => ({
     ...mem,
     score: simulateSimilarity(query, mem, 1),
@@ -196,7 +214,6 @@ export function mockSearch(query) {
     bm25Score: simulateBM25(query, mem),
   }));
 
-  // Compute BM25 scores
   const bm25Scored = mockMemories.map((mem) => ({
     ...mem,
     score: simulateBM25(query, mem),
@@ -204,11 +221,8 @@ export function mockSearch(query) {
     bm25Score: simulateBM25(query, mem),
   }));
 
-  // Sort each
   const vectorResults = [...vectorScored].sort((a, b) => b.score - a.score);
   const bm25Results = [...bm25Scored].sort((a, b) => b.score - a.score);
-
-  // Compute hybrid via RRF
   const hybridResults = rrfFuse(vectorResults, bm25Results).sort((a, b) => b.score - a.score);
 
   return {
